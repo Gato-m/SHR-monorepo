@@ -1,25 +1,21 @@
-const path = require("path");
-const { getDefaultConfig } = require("expo/metro-config");
+// Set the EXPO_ROUTER_APP_ROOT for expo-router BEFORE any requires
+process.env.EXPO_ROUTER_APP_ROOT = './app';
+
+const path = require('path');
+const { getDefaultConfig } = require('expo/metro-config');
 
 const projectRoot = __dirname;
-const workspaceRoot = path.resolve(projectRoot, "../..");
+const workspaceRoot = path.resolve(projectRoot, '../..');
 
 const config = getDefaultConfig(projectRoot);
 
-// Atļaujam Metro lasīt kodu no packages/
+// Watch folders for monorepo
 config.watchFolders = [workspaceRoot];
 
-// Nodrošinām, ka Metro pareizi seko pnpm symlinkiem
+// Node modules paths for pnpm
 config.resolver.nodeModulesPaths = [
-  path.resolve(projectRoot, "node_modules"),
-  path.resolve(workspaceRoot, "node_modules"),
+  path.resolve(projectRoot, 'node_modules'),
+  path.resolve(workspaceRoot, 'node_modules'),
 ];
-
-// Aliasu atbalsts
-config.resolver.extraNodeModules = {
-  "@schema": path.resolve(workspaceRoot, "packages/schema/src"),
-  "@ui": path.resolve(workspaceRoot, "packages/ui/src"),
-  "@utils": path.resolve(workspaceRoot, "packages/utils/src"),
-};
 
 module.exports = config;
