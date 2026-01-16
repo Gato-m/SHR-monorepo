@@ -1,0 +1,18 @@
+{
+  "app": "myproject",
+  "database": {
+    "host": "ep-twilight-mud-abewjwza-pooler.eu-west-2.aws.neon.tech",
+    "port": 5432,
+    "user": "neondb_owner",
+    "password": "npg_B6krMY9xsyXu",
+    "dbname": "neondb",
+    "sslmode": "require"
+  },
+  "auth": {
+    "jwt_secret": "CC27F9AD-B596-4B51-A134-A21275D9B185"
+  },
+  "replication": {
+    "slot": "electric_slot",
+    "publication": "electric_publication"
+  }
+}
