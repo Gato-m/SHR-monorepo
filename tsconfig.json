@@ -11,21 +11,12 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@schema/*": [
-        "packages/schema/src/*"
-      ],
-      "@ui/*": [
-        "packages/ui/src/*"
-      ],
-      "@utils/*": [
-        "packages/utils/src/*"
-      ]
+      "@/*": ["apps/*"],
+      "@schema/*": ["packages/schema/src/*"],
+      "@ui/*": ["packages/ui/src/*"],
+      "@utils/*": ["packages/utils/src/*"]
     }
   },
-  "include": [
-    "apps",
-    "packages",
-    "backend"
-  ],
+  "include": ["apps", "packages", "backend", ".expo/types/**/*.ts", "expo-env.d.ts"],
   "extends": "expo/tsconfig.base"
 }

@@ -1,0 +1,8 @@
+{
+  "name": "prombutne",
+  "main": "index.js",
+  "scripts": {
+    "dev": "expo start",
+    "start": "expo start"
+  }
+}

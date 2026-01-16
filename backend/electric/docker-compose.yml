@@ -1,0 +1,8 @@
+services:
+  electric:
+    image: electricsql/electric:latest
+    ports:
+      - '5133:5133'
+    env_file:
+      - .env
+    restart: unless-stopped
