@@ -1,0 +1,14 @@
+{
+  "name": "SHR-legend-supa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start"
+  },
+  "dependencies": {
+    "expo": "^54.0.0",
+    "expo-router": "^6.0.21",
+    "react": "18.2.0",
+    "react-native": "0.73.0"
+  }
+}
