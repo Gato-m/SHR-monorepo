@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  electric:
+    image: electricsql/electric
+    ports:
+      - '5133:5133'
+    env_file:
+      - .env

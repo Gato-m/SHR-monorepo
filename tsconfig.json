@@ -1,22 +1,41 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["apps/*"],
-      "@schema/*": ["packages/schema/src/*"],
-      "@ui/*": ["packages/ui/src/*"],
-      "@utils/*": ["packages/utils/src/*"]
+      "assets/*": [
+        "packages/assets/*"
+      ],
+      "components/*": [
+        "packages/components/*"
+      ],
+      "electric/*": [
+        "packages/electric/*"
+      ],
+      "hooks/*": [
+        "packages/hooks/*"
+      ],
+      "lib/*": [
+        "packages/lib/*"
+      ],
+      "schema/*": [
+        "packages/schema/*"
+      ],
+      "theme/*": [
+        "packages/theme/*"
+      ],
+      "ui/*": [
+        "packages/ui/*"
+      ],
+      "utils/*": [
+        "packages/utils/*"
+      ]
     }
   },
-  "include": ["apps", "packages", "backend", ".expo/types/**/*.ts", "expo-env.d.ts"],
-  "extends": "expo/tsconfig.base"
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
 }
