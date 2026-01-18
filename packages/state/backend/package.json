@@ -1,0 +1,8 @@
+{
+  "name": "@shr/state",
+  "main": "src/index.ts",
+  "private": true,
+  "dependencies": {
+    "legend-state": "^1.15.0"
+  }
+}
