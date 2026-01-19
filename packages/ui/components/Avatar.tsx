@@ -1,6 +1,6 @@
 import { Image } from 'react-native';
 
-export function Avatar({ uri, size = 48 }) {
+export function Avatar({ uri, size = 55 }) {
   return (
     <Image
       source={{ uri }}
@@ -8,6 +8,7 @@ export function Avatar({ uri, size = 48 }) {
         width: size,
         height: size,
         borderRadius: size / 2,
+        marginHorizontal: 8,
       }}
     />
   );

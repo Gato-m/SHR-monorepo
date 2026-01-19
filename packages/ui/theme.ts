@@ -1,13 +1,16 @@
 export const theme = {
   colors: {
-    background: '#ffffff',
-    text: '#111111',
-    primary: '#3b82f6',
-    secondary: '#64748b',
-    border: '#e5e7eb',
+    background: '#f2f2f2',
+    white: '#ffffff',
+    text: '#171717',
+    primary: '#218f2c',
+    secondary: '#166c1a',
+    gray: '#dadada',
+    darkgray: '#8c8c8c',
   },
 
   spacing: {
+    xxs: 2,
     xs: 4,
     sm: 8,
     md: 12,
@@ -25,5 +28,12 @@ export const theme = {
     title: 20,
     subtitle: 16,
     body: 14,
+    caption: 12,
+  },
+
+  weights: {
+    regular: '400',
+    medium: '500',
+    bold: '600',
   },
 };
