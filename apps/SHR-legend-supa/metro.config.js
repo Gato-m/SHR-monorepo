@@ -20,6 +20,7 @@ config.resolver.unstable_enableSymlinks = true;
 // Add extra node modules resolution
 config.resolver.extraNodeModules = {
   packages: path.resolve(workspaceRoot, 'packages'),
+  '@shr/ui': path.resolve(workspaceRoot, 'packages/ui'),
 };
 
 module.exports = config;
