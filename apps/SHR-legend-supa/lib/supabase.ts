@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 
+<<<<<<< HEAD
 console.log('Supabase URL:', process.env.EXPO_PUBLIC_SUPABASE_URL);
 console.log('Supabase ANON KEY:', process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY);
 
@@ -7,3 +8,9 @@ export const supabase = createClient(
   process.env.EXPO_PUBLIC_SUPABASE_URL!,
   process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY!
 );
+=======
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+>>>>>>> feature/legend-state
