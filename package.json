@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "recover": "bash scripts/recover.sh",
-    "build": "pnpm -r build"
+    "build": "pnpm -r build",
+    "dev": "expo start"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.90.1",

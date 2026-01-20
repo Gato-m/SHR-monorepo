@@ -1,32 +1,23 @@
-<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { FlatList, Text, View, Image } from 'react-native';
+import { FlatList, Text, View, Image, ActivityIndicator } from 'react-native';
 
 export default function IndexScreen() {
   const [users, setUsers] = useState([]);
-=======
-import { useEffect } from 'react';
-import { FlatList, Text, View, Image, ActivityIndicator } from 'react-native';
-import { useLegend } from '../state/legend';
-
-export default function IndexScreen() {
-  const users = useLegend((s) => s.users);
-  const loading = useLegend((s) => s.loading);
-  const error = useLegend((s) => s.error);
-  const syncUsers = useLegend((s) => s.syncUsers);
->>>>>>> feature/legend-state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
 
   useEffect(() => {
-<<<<<<< HEAD
     const fetchUsers = async () => {
       // Ping to verify connection
       const { error: pingError } = await supabase.from('users').select('id').limit(1);
 
       if (pingError) {
         console.log('Supabase connection error:', pingError);
+        setError(pingError.message);
+        setLoading(false);
         return;
       }
 
@@ -36,15 +27,16 @@ export default function IndexScreen() {
       console.log('Supabase users data:', data);
       console.log('Supabase users error:', error);
 
-      if (!error && data) {
+      if (error) {
+        setError(error.message);
+      } else if (data) {
         setUsers(data);
       }
+
+      setLoading(false);
     };
 
     fetchUsers();
-  }, []);
-=======
-    syncUsers();
   }, []);
 
   if (loading) {
@@ -63,7 +55,6 @@ export default function IndexScreen() {
       </View>
     );
   }
->>>>>>> feature/legend-state
 
   return (
     <FlatList
@@ -77,10 +68,7 @@ export default function IndexScreen() {
             <Image
               source={{ uri: avatarUrl }}
               style={{ width: 48, height: 48, borderRadius: 24 }}
-<<<<<<< HEAD
               onError={(e) => console.log('Image load error:', e.nativeEvent, 'URL:', avatarUrl)}
-=======
->>>>>>> feature/legend-state
             />
             <View style={{ marginLeft: 12 }}>
               <Text>{item.name}</Text>
