@@ -1,11 +1,14 @@
 {
   "name": "SHR-legend-supa",
   "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "@supabase/supabase-js": "^2.90.1"
-  },
+  "main": "index.js",
   "scripts": {
-    "dev": "expo start"
+    "start": "expo start"
+  },
+  "dependencies": {
+    "expo": "~54.0.31",
+    "expo-router": "^6.0.21",
+    "react": "19.1.0",
+    "react-native": "0.81.5"
   }
 }

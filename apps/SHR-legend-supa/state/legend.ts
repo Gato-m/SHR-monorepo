@@ -5,11 +5,13 @@ export const useLegend = create((set, get) => ({
   users: [],
   loading: false,
   error: null,
+  channel: null,
 
   setUsers: (users) => set({ users }),
   setLoading: (loading) => set({ loading }),
   setError: (error) => set({ error }),
 
+  // Fetch + real-time sync
   syncUsers: async () => {
     const { setUsers, setLoading, setError } = get();
 
@@ -49,20 +51,21 @@ export const useLegend = create((set, get) => ({
       })
       .subscribe();
 
-    // Save channel for cleanup if needed
     set({ channel });
   },
 
-  // Optional: stop subscription
+  // Stop real-time sync
   stopSync: () => {
     const { channel } = get();
     if (channel) supabase.removeChannel(channel);
   },
 
+  // Reset store
   reset: () =>
     set({
       users: [],
       loading: false,
       error: null,
+      channel: null,
     }),
 }));
