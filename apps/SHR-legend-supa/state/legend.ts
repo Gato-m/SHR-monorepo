@@ -13,6 +13,8 @@ export const useLegend = create((set, get) => ({
 
   // Fetch + real-time sync
   syncUsers: async () => {
+    console.log('syncUsers CALLED');
+
     const { setUsers, setLoading, setError } = get();
 
     setLoading(true);
@@ -30,10 +32,12 @@ export const useLegend = create((set, get) => ({
     setUsers(data);
     setLoading(false);
 
-    // 2) Real-time subscription
+    // 2) Real-time subscription (Supabase JS v2)
     const channel = supabase
       .channel('users-realtime')
       .on('postgres_changes', { event: '*', schema: 'public', table: 'users' }, (payload) => {
+        console.log('REALTIME EVENT', payload);
+
         const { eventType, new: newUser, old: oldUser } = payload;
         const users = get().users;
 
@@ -50,6 +54,8 @@ export const useLegend = create((set, get) => ({
         }
       })
       .subscribe();
+
+    console.log('SUBSCRIBED (postgres_changes)', channel);
 
     set({ channel });
   },
