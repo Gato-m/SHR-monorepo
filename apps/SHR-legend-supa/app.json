@@ -4,6 +4,10 @@
     "slug": "SHR-legend-supa",
     "version": "1.0.0",
     "sdkVersion": "54.0.0",
-    "scheme": "SHR-legend-supa"
+    "scheme": "SHR-legend-supa",
+    "extra": {
+      "EXPO_PUBLIC_SUPABASE_URL": "https://pudjpbkurtrmbfrfdtjr.supabase.co",
+      "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB1ZGpwYmt1cnRybWJmcmZkdGpyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg2NDIwMTAsImV4cCI6MjA4NDIxODAxMH0.qvMVNo2sTKuf7155ZyFo2gj105qv1bc2GvZLNSGohBM"
+    }
   }
 }

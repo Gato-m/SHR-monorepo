@@ -58,8 +58,22 @@ export const useLegend = create<LegendState>((set, get) => ({
     try {
       setLoading(true);
 
+
       // 1) Initial fetch
-      const { data, error } = await supabase.from('users').select('*');
+      console.log('[legend] before supabase.from(users).select(*)');
+      let data, error;
+      try {
+        const result = await supabase.from('users').select('*');
+        data = result.data;
+        error = result.error;
+        console.log('[legend] initial fetch result', { data, error });
+      } catch (fetchErr) {
+        console.log('[legend] fetch threw exception', fetchErr);
+        setError(fetchErr?.message ?? String(fetchErr));
+        setLoading(false);
+        set({ isSyncing: false });
+        return;
+      }
 
       if (error) {
         console.log('[legend] initial fetch error', error);
