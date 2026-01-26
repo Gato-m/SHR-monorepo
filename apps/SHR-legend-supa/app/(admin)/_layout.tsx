@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { Stack } from 'expo-router';
 
-export default function _layout() {
+export default function AdminLayout() {
   return (
-    <View>
-      <Text>Admin_layout and auth guard</Text>
-    </View>
+    <Stack
+      screenOptions={{
+        headerShown: true,
+      }}
+    />
   );
 }
-
-const styles = StyleSheet.create({});

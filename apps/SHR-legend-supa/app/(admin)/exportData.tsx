@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-export default function editUsers() {
+export default function exportData() {
   return (
     <View>
-      <Text>link to edit-users list</Text>
+      <Text>Admin modal export</Text>
     </View>
   );
 }
