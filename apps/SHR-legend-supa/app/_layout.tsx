@@ -1,7 +1,8 @@
 import { Stack, router } from 'expo-router';
 import { useEffect } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, ImageBackground } from 'react-native';
 import { useAuth } from '../state/auth';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function RootLayout() {
   const user = useAuth((s) => s.user);
@@ -33,5 +34,15 @@ export default function RootLayout() {
     );
   }
 
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <SafeAreaProvider>
+      <ImageBackground
+        source={require('../app/assets/colorBg.jpg')}
+        resizeMode="cover"
+        style={{ flex: 1 }}
+      >
+        <Stack screenOptions={{ headerShown: false }} />
+      </ImageBackground>
+    </SafeAreaProvider>
+  );
 }

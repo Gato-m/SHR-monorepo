@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { supabase } from '../../lib/supabase';
 import { useAuth } from '../../state/auth';
 import { router } from 'expo-router';
@@ -51,7 +52,7 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Pieslēgšanās</Text>
       <TextInput
         style={styles.input}
@@ -75,7 +76,7 @@ export default function LoginScreen() {
         </Text>
       </Text>
       {error ? <Text style={styles.error}>{error}</Text> : null}
-    </View>
+    </SafeAreaView>
   );
 }
 

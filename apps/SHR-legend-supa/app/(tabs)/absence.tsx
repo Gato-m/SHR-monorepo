@@ -1,11 +1,15 @@
+
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import React from 'react';
 
-export default function absence() {
+export default function Absence() {
   return (
-    <View>
-      <Text>Tabs absence</Text>
-    </View>
+    <SafeAreaView>
+      <View>
+        <Text>Tabs absence</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 

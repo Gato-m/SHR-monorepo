@@ -5,6 +5,7 @@ import { ListItem } from '@shr/ui';
 import { useLegend } from '../../state/legend';
 import { View, Text, Button } from 'react-native';
 import Constants from 'expo-constants';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function IndexScreen() {
   const users = useLegend((s) => s.users);
@@ -26,7 +27,7 @@ export default function IndexScreen() {
   }, []);
 
   return (
-    <View>
+    <SafeAreaView>
       <Text>Users count: {users.length}</Text>
       <Text>Loading: {loading ? 'yes' : 'no'}</Text>
       <Button title="Sync" onPress={() => useLegend.getState().syncUsers()} />
@@ -42,6 +43,6 @@ export default function IndexScreen() {
           />
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 }
